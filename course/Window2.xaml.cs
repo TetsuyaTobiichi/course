@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,22 @@ namespace course
         public Window2()
         {
             InitializeComponent();
-            List<string> items = new List<string>() { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10" };
+            string connectionString = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=476312;Database=coursework;";
+            NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+            connection.Open();
+            List<string> items = new List<string>();
+            using (var cmd = new NpgsqlCommand("SELECT * FROM \"table\"", connection))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        
+                        items.Add(reader.GetString(0));
+                        // Обработка данных
+                    }
+                }
+            }
             foreach (string item in items)
             {
                 myListBox.Items.Add(item);
