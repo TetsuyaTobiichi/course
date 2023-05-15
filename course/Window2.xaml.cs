@@ -21,11 +21,17 @@ namespace course
     public partial class Window2 : Window
     {
        List<string> favorItem = new List<string>();
+        public NpgsqlConnection connect()
+        {
+            string connectionString = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=476312;Database=coursework;";
+            NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+            
+            return connection;
+        }
         public Window2()
         {
             InitializeComponent();
-            string connectionString = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=476312;Database=coursework;";
-            NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+            var connection = connect();
             connection.Open();
             List<string> items = new List<string>();
             using (var cmd = new NpgsqlCommand("SELECT * FROM \"table\"", connection))

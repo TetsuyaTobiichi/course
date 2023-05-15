@@ -28,19 +28,26 @@ namespace course
             NpgsqlConnection connection = new NpgsqlConnection(connectionString);
             connection.Open();*/
             InitializeComponent();
+            end.Visibility = Visibility.Hidden;
+            rate.Visibility = Visibility.Hidden;
         }
-
+        public int Result(int correctAswer,int answerCount)
+        {
+            return answerCount / correctAswer;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            answer1.Content = "123";
-            if ((bool)answer1.IsChecked)
-            {
-                
-                correctAnswer ++;
-                //123
-                answer1.Content = "333";
-                answer2.Content = correctAnswer;
-            }
+            answer1.Visibility = Visibility.Hidden;
+            answer2.Visibility = Visibility.Hidden;
+            answer3.Visibility = Visibility.Hidden;
+            next.Visibility= Visibility.Hidden;
+            end.Visibility = Visibility.Visible;
+            rate.Visibility = Visibility.Visible;
+        }
+
+        private void end_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

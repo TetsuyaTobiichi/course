@@ -27,8 +27,8 @@ namespace course
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
-
-            if (login1.Text == "admin")
+            myTextBlock.Text = "Updated Text";
+            if (loginTextBox.Text == "admin")
             {
                 Window window = new Window2();
                 window.Show();

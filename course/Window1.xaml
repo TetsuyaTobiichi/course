@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Window1" Height="238" Width="232">
     <Grid Margin="0,0,0,-6">
-        <RadioButton x:Name="answer1" Content="RadioButton" HorizontalAlignment="Center" Margin="0,18,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="answer2" Content="RadioButton" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="answer3" Content="RadioButton" HorizontalAlignment="Center" Margin="0,86,0,0" VerticalAlignment="Top"/>
-        <Button Content="дальше" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <RadioButton x:Name="answer1" Content="вопрос 1" HorizontalAlignment="Center" Margin="0,18,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="answer2" Content="вопрос 2" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="answer3" Content="вопрос 3" HorizontalAlignment="Center" Margin="0,86,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="next" Content="дальше" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="end" Content="завершить тест" HorizontalAlignment="Left" Margin="82,125,0,0" VerticalAlignment="Top" Click="end_Click"/>
+        <TextBlock x:Name="rate" HorizontalAlignment="Left" Margin="68,53,0,0" TextWrapping="Wrap" Text="80 % верных ответов" VerticalAlignment="Top" Height="28" Width="127"/>
     </Grid>
 </Window>
